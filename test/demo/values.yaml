@@ -3,3 +3,9 @@ yo:
   second: two
   third: three
 fourth: four
+tags:
+  machine: mac
+  ram: 8
+  os: macos
+  comapany: mindtree
+

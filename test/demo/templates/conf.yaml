@@ -12,3 +12,9 @@ data:
   {{- if eq .Values.yo.second "two" }}
   fifth: {{ .Values.yo.second}}
   {{- end}}
+  # loop
+  {{- with .Values.tags }}
+  machine: {{ .machine }}
+  os: {{ .os }}
+  ram: {{ .ram}}
+  {{- end}}
