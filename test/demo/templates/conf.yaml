@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name}}
+data:
+  first: {{ .Values.first}}
+  second: {{ .Values.yo.second}}
+  third: {{ upper .Values.yo.third}}
+  #the below if condition is put in a single line as it gives spaces in the yaml file 
+  {{ if eq .Values.fourth "four" }}fourth: four  {{ end }}
+  # in the below if else we added a - symbol before if and end  inorder to avoid space in the manifest file 
+  {{- if eq .Values.yo.second "two" }}
+  fifth: {{ .Values.yo.second}}
+  {{- end}}
