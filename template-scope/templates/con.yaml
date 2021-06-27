@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}
+  #nthis template is defined inside _helper.tpl
+  {{- template "demo.include" . }}
+data:
+ yo: yoyo
