@@ -1,0 +1,13 @@
+{{- define "template-demo.systemlabels" }}
+  labels:
+     drive: ssd
+     processor: intel
+     os: windows
+{{- end}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}
+  {{- template "template-demo.systemlabels" }}
+data:
+ yo: yoyo
